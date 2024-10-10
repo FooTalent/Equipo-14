@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}", // Archivos donde Tailwind busca las clases
+    "./src/**/*.{html,ts}",  // Ajusta las rutas de acuerdo con tu proyecto
   ],
   theme: {
     extend: {},
