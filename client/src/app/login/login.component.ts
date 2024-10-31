@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../services/login.service';
+import { RouterModule } from '@angular/router';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +12,7 @@ import Swal from 'sweetalert2';
     standalone: true,
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    imports: [FormsModule, CommonModule],
+    imports: [FormsModule, CommonModule, RouterModule],
 })
 export class LoginComponent {
     email: string = '';

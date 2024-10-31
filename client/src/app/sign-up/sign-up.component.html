@@ -1,0 +1,43 @@
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-[90%] md:max-w-[650px] h-auto flex flex-col items-center p-4 md:p-0">
+    <div class="w-full max-w-[100%] md:max-w-[534px] p-4 md:p-6 rounded-xl border border-transparent bg-[#FEFEFF] shadow-md mb-4">
+        <div class="flex items-center justify-center w-full h-[100px] mb-4 md:mb-6">
+            <div class="w-[200px] h-[67.38px]">
+                <img src="https://s3-alpha-sig.figma.com/img/b468/47e0/7a4d76d5e5326e185b1fbbece43de662?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Ziq-MO7jVoPpb3lzUg5QGuiwOwW~McGxySpAslL4~X0USTk0yyFYMKMZqeC6HvyzSOhfUZ1HD9aA0l54DWXRhDpywdjSKxaaN59vxcSl2nZL-wbBBK1J2A3Pfl-~8o86uIu0VYcZhTZsKVgsnG5hz-z4ztOfFcsEhSbGdU6aHKfUixCAxcIw-Pm1-5F1Oe~x7gKDg8dAJZN~y601n-gydxBjOFFa2iNTaQk1g0CYe4iuD9QZkoTUkSZ53JByVD18PyE-9DXhePZ8ulOqYjvJRnnYcgS4jjwOkBtR60p3LgZYgaDIYSpIY0Bgi4fJrHLrJNg1PAl-RWOd9DQcuvqNUA__" alt="Logo" class="w-full h-full object-contain" />
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold mb-4 md:mb-6 text-center text-gray-800">Registro</h2>
+
+        <!-- Campos de correo, teléfono, usuario y contraseña -->
+        <div class="w-full h-auto flex flex-col justify-between mb-4">
+            <label for="email" class="text-sm font-semibold">Correo electrónico</label>
+            <input id="email" type="text" placeholder="correo@ejemplo.com" [(ngModel)]="email" required class="w-full h-[48px] bg-[#F8F9F8] border border-[#E0E9ED] rounded focus:outline-none px-3" (input)="validateEmail()" />
+            <span *ngIf="emailError" class="text-red-500 text-sm">{{ emailError }}</span>
+        </div>
+        <div class="w-full h-auto flex flex-col justify-between mb-4">
+            <label for="phone" class="text-sm font-semibold">Teléfono</label>
+            <input id="phone" type="text" placeholder="Telefono" [(ngModel)]="phone" required class="w-full h-[48px] bg-[#F8F9F8] border border-[#E0E9ED] rounded focus:outline-none px-3" (input)="validatePhone()" />
+            <span *ngIf="phoneError" class="text-red-500 text-sm">{{ phoneError }}</span>
+        </div>
+        <div class="w-full h-auto flex flex-col justify-between mb-4">
+            <label for="username" class="text-sm font-semibold">Nombre de usuario</label>
+            <input id="username" type="text" placeholder="Nombre de usuario" [(ngModel)]="username" required class="w-full h-[48px] bg-[#F8F9F8] border border-[#E0E9ED] rounded focus:outline-none px-3" />
+        </div>
+        <div class="w-full h-auto flex flex-col justify-between mb-4">
+            <label for="password" class="text-sm font-semibold">Contraseña</label>
+            <input id="password" type="password" placeholder="*******" [(ngModel)]="password" required class="w-full h-[48px] bg-[#F8F9F8] border border-[#E0E9ED] rounded focus:outline-none px-3" (input)="validatePassword()" />
+            <span *ngIf="passwordError" class="text-red-500 text-sm">{{ passwordError }}</span>
+        </div>
+
+        <!-- Botón de registrarse -->
+        <div class="w-full h-[48px] mt-4">
+            <button class="w-full h-full rounded text-black text-sm font-semibold bg-[#34D399] hover:bg-[#75c6a8] transition duration-150" (click)="onSignUp()" [disabled]="!username || !email || !phone || !password || emailError || phoneError || passwordError">Registrarse</button>
+        </div>
+
+        <!-- Enlace a Iniciar sesión -->
+        <p class="text-center mt-4 text-sm text-gray-600">
+            ¿Ya tienes una cuenta?
+            <a routerLink="/login" class="text-[#34D399] font-semibold hover:underline">Inicia sesión aquí</a>
+        </p>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FiltrosComponent } from './filtros/filtros.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ConfirmarEliminarComponent } from './confirmar-eliminar/confirmar-eliminar.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,6 +20,7 @@ export const routes: Routes = [
     { path: 'inventario', component: InventarioComponent, canActivate: [loginGuard] },
     { path: 'landing-page', component: LandingPageComponent },
     { path: 'login', component: LoginComponent },
+    { path:  'registrar', component: SignUpComponent},
     { path: 'sidebar', component: SidebarComponent, canActivate: [loginGuard] },
     { path: '**', redirectTo: '/landing-page', pathMatch: 'full' },
 

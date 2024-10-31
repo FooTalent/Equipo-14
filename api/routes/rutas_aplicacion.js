@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const usariosController = require("../controllers/usuarioController");
+const usuariosController = require("../controllers/usuarioController");
 const inventarioController = require("../controllers/inventarioController");
 const upload = require("../middleware/multer.middleware");
 
 //rutas para crear y obtener usuarios
-router.post("/crear-usuario", usariosController.crearUsuario);
-router.get("/obtener-usuarios", usariosController.obtenerUsuarios);
-router.get("/obtener-usuario/:id", usariosController.obtenerUsuario);
-router.post("/login/ingreso-sistema", usariosController.obtenerUsuarioXEmail);
-router.delete("/eliminar-usuario/:id", usariosController.eliminarUsuario);
+router.post("/sign-up/registrar", usuariosController.crearUsuario); 
+router.get("/obtener-usuarios", usuariosController.obtenerUsuarios);
+router.get("/obtener-usuario/:id", usuariosController.obtenerUsuario);
+router.post("/login/ingreso-sistema", usuariosController.obtenerUsuarioXEmail);
+router.delete("/eliminar-usuario/:id", usuariosController.eliminarUsuario);
 
 //rutas para añadir,obtener ,modificar y eliminar inventario
 router.post("/inventario/registrar-producto", upload.single('file'), inventarioController.crearInventario);
