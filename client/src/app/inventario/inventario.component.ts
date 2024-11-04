@@ -111,12 +111,12 @@ export class InventarioComponent {
             this.contadorProductos = data;
         })
 
-        this.api.contarElementos('stock').subscribe((data: any) => {
-            this.contadorStock = data[0].totalCantidad;
-        })
+        // this.api.contarElementos('stock').subscribe((data: any) => {
+        //     this.contadorStock = data[0].totalCantidad;
+        // })
 
-        this.api.contarElementos('proveedores').subscribe((data: any) => {
-            this.contadorProveedores = data[0].totalProveedores;
-        })
+        // this.api.contarElementos('proveedores').subscribe((data: any) => {
+        //     this.contadorProveedores = data[0].totalProveedores;
+        // })
     }
 }
